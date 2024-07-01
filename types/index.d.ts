@@ -8,14 +8,14 @@ declare type SearchParamProps = {
 // ========================================
 
 declare type SignUpParams = {
-  firstName: string;
-  lastName: string;
-  address1: string;
-  city: string;
-  state: string;
-  postalCode: string;
-  dateOfBirth: string;
-  ssn: string;
+  firstName?: string;
+  lastName?: string;
+  address?: string;
+  city?: string;
+  state?: string;
+  postalCode?: string;
+  dateOfBirth?: string;
+  ssn?: string;
   email: string;
   password: string;
 };
@@ -31,9 +31,8 @@ declare type User = {
   userId: string;
   dwollaCustomerUrl: string;
   dwollaCustomerId: string;
-  firstName: string;
-  lastName: string;
-  address1: string;
+  name: string;
+  address: string;
   city: string;
   state: string;
   postalCode: string;
@@ -128,7 +127,7 @@ declare type NewDwollaCustomerParams = {
   lastName: string;
   email: string;
   type: string;
-  address1: string;
+  address: string;
   city: string;
   state: string;
   postalCode: string;
@@ -189,6 +188,19 @@ declare interface PlaidLinkProps {
 
 declare interface AuthFormProps {
   type: "sign-in" | "sign-up";
+}
+
+import { authFormSchema } from '@/lib/utils';
+
+declare interface FormFieldProps {
+  form: any;
+  name: FieldPath<z.infer<typeof authFormSchema>>;
+  label: string;
+  placeholder: string;
+  type?: 'text' | 'password';
+  autocomplete?: string;
+  autocapitalize?: string;
+  inputmode?: string;
 }
 
 declare interface BankDropdownProps {

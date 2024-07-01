@@ -284,11 +284,11 @@
   }
 
   .form-label {
-    @apply text-14 w-full max-w-[280px] font-medium text-gray-700;
+    @apply text-14 ml-0.5 w-full max-w-[280px] font-medium text-gray-700;
   }
 
   .form-message {
-    @apply text-12 text-red-500;
+    @apply text-12 mt-1 ml-0.5 text-red-500;
   }
 
   .form-btn {
